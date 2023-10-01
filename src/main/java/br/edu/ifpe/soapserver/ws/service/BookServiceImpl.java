@@ -17,7 +17,7 @@ public class BookServiceImpl implements BookService {
 	public boolean addBook(Book book) {
 		if (books.get(book.getCode()) != null)
 			return false;
-		System.out.println("Adding book: " + book);
+		System.out.println("Adicionando livro: " + book);
 		books.put(book.getCode(), book);
 		return true;
 	}
@@ -26,26 +26,26 @@ public class BookServiceImpl implements BookService {
 	public boolean removeBook(String code) {
 		if (books.get(code) == null)
 			return false;
-		System.out.println("Removing book: " + books.get(code));
+		System.out.println("Removendo livro: " + books.get(code));
 		books.remove(code);
 		return true;
 	}
 
 	@Override
 	public Book getBookById(String code) {
-		System.out.println("Getting book: " + books.get(code));
+		System.out.println("Retornando livro: " + books.get(code));
 		return books.get(code);
 	}
 
 	@Override
 	public Book[] getBooks() {
-		System.out.println("Listing Books...");
+		System.out.println("Listando livros...");
 		Set<String> codes = books.keySet();
 		Book[] p = new Book[codes.size()];
 		int i = 0;
 		for (String code : codes) {
 			p[i] = books.get(code);
-			System.out.println("Book: " + p[i]);
+			System.out.println("Livro: " + p[i]);
 			i++;
 		}
 		return p;

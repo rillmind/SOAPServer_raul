@@ -54,7 +54,7 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "> " + this.title + " ($" + this.cost + ")";
+		return "> " + this.title + " (R$" + this.cost + ") " + this.code;
 	}
 
 }
